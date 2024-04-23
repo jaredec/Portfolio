@@ -1,7 +1,10 @@
+/* styles.css */
+
+/* Default styles for the webpage */
 body {
     margin-left: auto;
     margin-right: auto;
-    width: 50%; /* or any percentage or fixed width you want */
+    width: 50%;
 }
 
 /* Custom CSS Styles */
@@ -34,4 +37,39 @@ body {
 
 .custom-margin {
     margin: 30px;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 576px) {
+    body {
+        width: auto;
+    }
+    .navbar-brand {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        text-align: center;
+    }
+    .navbar-nav {
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .navbar-toggler {
+        float: none;
+        clear: both;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        text-align: center;
+    }
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .card {
+        width: 100%;
+    }
 }
