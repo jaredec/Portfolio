@@ -1,0 +1,37 @@
+body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; /* or any percentage or fixed width you want */
+}
+
+/* Custom CSS Styles */
+.container {
+    margin-top: 50px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+.bar {
+    display: inline-block;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.text-color {
+    color: blue;
+}
+
+.custom-margin {
+    margin: 30px;
+}
