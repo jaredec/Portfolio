@@ -2,7 +2,7 @@
 
 /* Default styles for the webpage */
 body {
-    margin: auto;
+    margin: 0;
     width: 100%;
 }
 
@@ -18,6 +18,7 @@ body {
 
 .navbar-nav .nav-link {
     color: #333;
+    padding: 10px; /* Adjust padding for navbar items */
 }
 
 .navbar-nav .nav-link:hover {
@@ -48,8 +49,6 @@ body {
     }
     .navbar-nav {
         text-align: center;
-        padding-left: 0;
-        padding-right: 0; /* Adjust padding for navbar items */
     }
     .navbar-nav .nav-item {
         display: inline-block;
