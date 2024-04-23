@@ -2,8 +2,8 @@
 
 /* Default styles for the webpage */
 body {
-    margin: 0; /* Remove default margin */
-    width: 100%; /* Make body stretch across the entire page */
+    margin: 0;
+    width: 100%;
 }
 
 /* Custom CSS Styles */
@@ -48,6 +48,8 @@ body {
     }
     .navbar-nav {
         text-align: center;
+        padding-left: 0;
+        padding-right: 0; /* Adjust padding for navbar items */
     }
     .navbar-nav .nav-item {
         display: inline-block;
