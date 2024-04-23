@@ -18,7 +18,7 @@ body {
 
 .navbar-nav .nav-link {
     color: #333;
-    padding: 10px; /* Adjust padding for navbar items */
+    padding: 40px; /* Adjust padding for navbar items */
 }
 
 .navbar-nav .nav-link:hover {
