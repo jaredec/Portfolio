@@ -2,9 +2,8 @@
 
 /* Default styles for the webpage */
 body {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+    margin: 0; /* Remove default margin */
+    width: 100%; /* Make body stretch across the entire page */
 }
 
 /* Custom CSS Styles */
@@ -41,9 +40,6 @@ body {
 
 /* Adjustments for smaller screens */
 @media (max-width: 576px) {
-    body {
-        width: auto;
-    }
     .navbar-brand {
         margin-right: auto;
         margin-left: auto;
