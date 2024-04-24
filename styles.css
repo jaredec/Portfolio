@@ -1,7 +1,7 @@
 body {
     margin-left: auto;
     margin-right: auto;
-    width: 50%; /* or any percentage or fixed width you want */
+    width: 80%; /* or any percentage or fixed width you want */
 }
 
 /* Custom CSS Styles */
@@ -34,4 +34,20 @@ body {
 
 .custom-margin {
     margin: 30px;
+}
+
+/* Media Query for Phones */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+    .navbar-brand {
+        margin-left: 10px; /* Adjust as needed for smaller screens */
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    .custom-margin {
+        margin: 20px; /* Adjust margin for smaller screens */
+    }
 }
