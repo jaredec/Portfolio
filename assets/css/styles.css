@@ -9,6 +9,10 @@ body {
     margin-top: 50px;
 }
 
+.navbar-brand:hover img {
+    filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
+}
+
 .navbar-brand {
     font-weight: bold;
     margin-left: 20px;
