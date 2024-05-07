@@ -1,0 +1,33 @@
+@media (min-width: 768px) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 33.333333%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .card .img-wrapper {
+      height: 17em;
+    }
+}
+
+/* Media Query for Phones */
+@media only screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+    .navbar-brand {
+        margin-left: 10px; /* Adjust as needed for smaller screens */
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    .custom-margin {
+        margin: 20px; /* Adjust margin for smaller screens */
+    }
+}

@@ -1,27 +1,20 @@
-body {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%; /* or any percentage or fixed width you want */
-}
-
-.grayscale {
-    filter: grayscale(100%);
-}
-
-/* Custom CSS Styles */
+/* Blank space container */
 .container {
     margin-top: 50px;
 }
 
+/* Navbar */ 
+
+/* Home Logo */
 .navbar-brand:hover img {
     filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
 }
 
-.navbar-brand {
-    font-weight: bold;
-    margin-left: 20px;
+.navbar-brand img {
+    margin-left: 0px;
 }
 
+/* Links */
 .navbar-nav .nav-link {
     color: #333;
 }
@@ -30,30 +23,39 @@ body {
     color: #007bff;
 }
 
-.bar {
-    display: inline-block;
-    width: 20px;
-    margin-right: 5px;
-}
-
-.text-color {
-    color: blue;
-}
-
-.custom-margin {
-    margin: 30px;
-}
+/* Carousel */
 
 .carousel-inner {
     padding: 1em;
 }
 
+/* Cards */
 .card {
     margin: 0 0.5em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
 }
 
+.card .img-wrapper {
+    max-width: 100%;
+    height: 10em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image covers the entire container */
+}
+
+.grayscale {
+    filter: grayscale(100%);
+}
+
+/* Arrows */
 .carousel-control-prev,
 .carousel-control-next {
     background-color: #e1e1e1;
@@ -64,6 +66,7 @@ body {
     transform: translateY(-50%);
 }
 
+/* Carousel display for media */
 @media (min-width: 768px) {
     .carousel-item {
       margin-right: 0;
@@ -72,42 +75,5 @@ body {
     }
     .carousel-inner {
       display: flex;
-    }
-}
-
-.card .img-wrapper {
-    max-width: 100%;
-    height: 13em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-.card .img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
-}
-
-@media (max-width: 767px) {
-    .card .img-wrapper {
-      height: 17em;
-    }
-}
-
-/* Media Query for Phones */
-@media only screen and (max-width: 600px) {
-    body {
-        width: 100%;
-    }
-    .navbar-brand {
-        margin-left: 10px; /* Adjust as needed for smaller screens */
-    }
-    .navbar-nav .nav-link {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-    .custom-margin {
-        margin: 20px; /* Adjust margin for smaller screens */
     }
 }
