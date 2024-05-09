@@ -87,11 +87,10 @@
     border-radius: 0 2px 2px 0;
 }
     
-.skills-icons{
-    width:50px;
-    z-index:2;
+.iconify{
+    font-size: 3em;
 }
-    
+
 .skills-img{
     width:90px;
     height:90px;
