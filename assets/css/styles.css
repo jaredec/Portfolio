@@ -4,6 +4,7 @@
 
 body {
     padding: 0px 100px;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Home Logo */
@@ -122,6 +123,12 @@ body {
     font-size: 3em;
 }
 
+iconify-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+}
+
 .skills-img{
     width:90px;
     height:90px;
@@ -141,8 +148,8 @@ body {
     width:50%;
     height:90px;
 }
-.skills-title h3{
-    color: #333;
+.skills-title h4{
+    text-align: left;
     margin-top: 0.5rem;
 }
 
