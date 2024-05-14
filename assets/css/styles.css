@@ -25,7 +25,6 @@ body {
 /* About */
 
 .intro-info {
-	margin-top: 4.2rem;
 }
 
 .intro-info img {
@@ -38,6 +37,19 @@ body {
 
 .intro-info .lead {
 	text-align: left;
+}
+
+.fzkLtX {
+    box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
+    transition: box-shadow 0.3s ease-out 0s;
+}
+
+.h3 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 3rem;
 }
 
 .intro-info .h1 {
@@ -123,7 +135,7 @@ body {
     font-size: 3em;
 }
 
-iconify-icon {
+.iconify-icon {
     display: inline-block;
     width: 1em;
     height: 1em;
@@ -245,6 +257,11 @@ iconify-icon {
 
     .navbar-nav .nav-link {
         font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .skills-container{
+        grid-tempLate-columns: repeat(2, 1fr);
+        padding: 2rem 50px;
     }
 
 }
