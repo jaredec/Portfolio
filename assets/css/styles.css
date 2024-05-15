@@ -11,9 +11,6 @@ iframe {
     max-width: 100%;
     width: 600px;
     height: 500px;
-    margin: 0 auto; /* This centers the iframe horizontally */
-    display: block; /* Ensures that margin: 0 auto works */
-
 }
 
 /* Projects */
@@ -280,6 +277,11 @@ pre {
             height: auto;
             max-width: 100%;
             display: block;
+        }
+
+        iframe {
+            max-width: 100%;
+            height: auto;
         }
 
     }
