@@ -19,7 +19,7 @@ iframe {
 /* Projects */
     .projects-container{
         text-align: left;
-        padding: 6rem 200px 4rem 200px;
+        padding: 6rem 10rem 4rem 10rem;
     }
 
     .projects-img img {
@@ -269,6 +269,17 @@ pre {
         .skills-container{
             grid-tempLate-columns: repeat(2, 1fr);
             padding: 2rem 50px;
+        }
+
+        .projects-container{
+            text-align: left;
+            padding: 2rem 1rem;
+        }
+
+        .projects-img img{
+            height: auto;
+            max-width: 100%;
+            display: block;
         }
 
     }
