@@ -174,21 +174,5 @@
         </ul>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script>
-        // Function to fetch and render Markdown content
-        function renderMarkdown() {
-            fetch('stockPortfolio.md')
-                .then(response => response.text())
-                .then(text => {
-                    const markdownContent = document.getElementById('markdownContent');
-                    markdownContent.innerHTML = marked(text);
-                });
-        }
-
-        // Call the function when the page loads
-        window.onload = renderMarkdown;
-    </script>
-
 </body>
 </html>
