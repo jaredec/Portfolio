@@ -6,6 +6,10 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+footer{
+    padding: 100px;
+}
+
 /* Home Logo */
 .navbar-brand img{
     filter: invert(100%);
