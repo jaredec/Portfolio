@@ -10,7 +10,14 @@ footer {
 /* Projects */
     .projects-container{
         text-align: left;
-        padding: 6rem 15rem 4rem 15rem;
+        padding: 6rem 200px 4rem 200px;
+    }
+
+    .projects-img img {
+        max-width: 60%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
 /* Projects */
 

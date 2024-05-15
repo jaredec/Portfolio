@@ -83,8 +83,8 @@
 
         <p>Now raw data can be pulled straight into my notebook.</p>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/uemp.png" alt="Overall Unemployment Rate (1948- )">
+        <div class="projects-img">
+            <img src="../assets/images/unemp/uemp.png" alt="Overall Unemployment Rate (1948- )">
         </div>
 
         <h3>Unemployment by State (1976- )</h3>
@@ -146,28 +146,34 @@
             title='Unemployment Rates by State')
         </pre>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/stateBar.png" alt="Unemployment Rates by State">
+        <div>
+            <iframe src="../assets/plotly/statePlot.html" width="600" height="400" frameborder="0"></iframe>
+        </div>
+        
+
+        <div class="projects-img">
+            <img src="../assets/images/unemp/stateBar.png" alt="Unemployment Rates by State">
         </div>
 
         <h4>County Plots</h4>
 
-        <div style="text-align: center;">
-        {% include countyPlot.html style="width: 200%; height: auto;" %}
+        <div>
+            <iframe src="../assets/plotly/countyPlot.html" width="600" height="400" frameborder="0"></iframe>
         </div>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/countyBar.png" alt="County Plots">
+
+        <div class="projects-img">
+            <img src="../assets/images/unemp/countyBar.png" alt="County Plots">
         </div>
 
         <h4>Industry Plot</h4>
 
-        <div style="text-align: center;">
-        {% include industryPlot.html %}
+        <div>
+            <iframe src="../assets/plotly/industryPlot.html" width="600" height="400" frameborder="0"></iframe>
         </div>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/industryBar.png" alt="Industry Plot">
+        <div class="projects-img">
+            <img src="../assets/images/unemp/industryBar.png" alt="Industry Plot">
         </div>
 
         <h3>Unemployment vs Key Economic Indicators</h3>
@@ -176,8 +182,8 @@
 
         <p>Our exploration begins with a look at SPY, a well-known benchmark for the U.S. stock market's performance:</p>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/spyPlot.png" alt="SPY Plot">
+        <div class="projects-img">
+            <img src="../assets/images/unemp/spyPlot.png" alt="SPY Plot">
         </div>
 
         <p>From there, we move on to explore other critical indicators, each providing unique insights into different aspects of the economy:</p>
@@ -193,8 +199,8 @@
         <li><strong>Money Supply</strong>: Total amount of money in circulation within an economy.</li>
         </ul>
 
-        <div style="text-align: center;">
-        <img src="../assets/images/unemp/indicatorsPlot.png" alt="Key Economic Indicators Plot">
+        <div class="projects-img">
+            <img src="../assets/images/unemp/indicatorsPlot.png" alt="Key Economic Indicators Plot">
         </div>
 
         <p>See the Jupyter Notebook with full code for the project <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/unemp/unemp.ipynb" target="_blank">here</a>.</p>
