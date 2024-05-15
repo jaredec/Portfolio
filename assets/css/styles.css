@@ -3,24 +3,20 @@
 /* Navbar */ 
 
 body {
-    padding: 0px 100px;
     font-family: 'Roboto', sans-serif;
 }
 
 /* Home Logo */
+.navbar-brand img{
+    filter: invert(100%);
+}
+
 .navbar-brand:hover img {
     filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
 }
 
 
 /* Links */
-.navbar-nav .nav-link {
-    color: #333;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #007bff;
-}
 
 /* About */
 .intro-info img {
@@ -70,7 +66,6 @@ body {
 
 
 /* Skills section */
-
 
 .skills-container{
     display: grid;
