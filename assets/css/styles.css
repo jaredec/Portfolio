@@ -15,9 +15,6 @@ body {
     filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
 }
 
-
-/* Links */
-
 /* About */
 .intro-info img {
 	height: 10rem;
