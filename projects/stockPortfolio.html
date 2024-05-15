@@ -9,7 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-              
+           
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="facebook" viewBox="0 0 16 16">
@@ -60,9 +63,105 @@
           </div>
         </div>
     </nav>
+    
+    <!-- Your markdown content converted to HTML -->
+    <div class="container px-4 py-5">
 
-    <div id="markdownContent"></div>
+      <h2>Stock Price Forecasting and Portfolio Value at Risk (VaR)</h2>
+      
+      <p><strong>Description:</strong> This project combines two key components: Stock price forecasting using Geometric Brownian Motion (GBM) and Monte Carlo Simulation for portfolio management. By integrating these techniques, the project aims to provide a method to forecast individual stock returns and measure the value at risk (VaR) within the context of a diversified portfolio.</p>
+      
+      <h3>Geometric Brownian Motion (GBM)</h3>
+      
+      <p>GBM is a widely used stochastic process to model the evolution of stock prices over time. By simulating multiple possible future scenarios, we estimate the potential range of outcomes for the stock's price.</p>
+      
+      <ul>
+      <li><strong>Explicit expression:</strong></li>
+      </ul>
+      
+      <div>
+        \[ S_t = S_0 \exp \left( (\mu - \frac{\sigma^2}{2}) t + \sigma W_t \right) \]
+      </div>
+      
+      <p>Where:</p>
+      
+      <div>
+        \[
+        \begin{align*}
+        S_t & : \text{Stock price at time \( t \)} \\
+        S_0 & : \text{Initial stock price (at time \( t = 0 \))} \\
+        \mu & : \text{Drift coefficient} \\
+        \sigma & : \text{Volatility} \\
+        W_t & : \text{Wiener process or Brownian motion} \\
+        \end{align*}
+        \]
+      </div>
+      
+      <p>Drift (\( \mu \)) serves as an indicator of the average rate of return of the stock over time, influencing the long-term trend of simulated trajectories. Volatility (\( \sigma \)), on the other hand, measures the degree of price fluctuation around this average return, directly impacting the magnitude of short-term fluctuations in trajectories. The Wiener process (\( W_t \)) introduces randomness or unpredictability into the trajectories, representing the stochastic nature of stock price movements.</p>
+      
+      <p>In <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/stocks/stockPriceForecast.py" target="_blank">Python</a>, we set up these parameters using the latest stock data, and by applying the GBM formula, we can generate multiple simulated trajectories of future stock prices. This technique, known as Monte Carlo Simulation, enables us to simulate various potential outcomes for a stock.</p>
+      
+      <div style="text-align: center;">
+        <img src="../assets/images/stockPortfolio/gbm_mc_sims.png" alt="GBM Monte Carlo Simulations">
+      </div>
 
+      <p>Another way to visualize these results is with a histogram at the final price at each simulation:</p>
+      
+      <div style="text-align: center;">
+        <img src="../assets/images/stockPortfolio/gbm_hist.png" alt="GBM Histogram">
+      </div>
+
+      <h3>Application in Portfolio Management</h3>
+      
+      <p>In this section, we extend the application of Monte Carlo Simulation to manage a portfolio of stocks and evaluate the associated risks. Unlike the previous Monte Carlo Simulation for individual stock price forecasting, here, we focus on simulating the performance of an entire portfolio.</p>
+      
+      <p>The key difference here is that we are now simulating a system with multiple correlated stocks. In our new <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/stocks/MC.py" target="_blank">Python code</a>, we generate a covariance matrix based on returns and utilize a technique known as Cholesky Decomposition. This matrix will help us understand how individual stock returns relate to each other within a portfolio.</p>
+      
+      <p>By applying the Cholesky Decomposition method, we simplify the covariance matrix, making it easier to work with. This simplification enables us to simulate returns by multiplying it with a random vector of independent standard normally distributed variables.</p>
+      
+      <ul>
+      <li>Consider this portfolio of stocks with an initial value of $10,000:</li>
+      </ul>
+      
+      <ol>
+      <li>Apple Inc. (AAPL)</li>
+      <li>Johnson & Johnson (JNJ)</li>
+      <li>Amazon.com Inc. (AMZN)</li>
+      <li>Microsoft Corporation (MSFT)</li>
+      <li>The Coca-Cola Company (KO)</li>
+      <li>Tesla, Inc. (TSLA)</li>
+      <li>Visa Inc. (V)</li>
+      <li>Alphabet Inc. (GOOG)</li>
+      <li>Procter & Gamble Company (PG)</li>
+      <li>JPMorgan Chase & Co. (JPM)</li>
+      </ol>
+
+      <div style="text-align: center;">
+        <img src="../assets/images/stockPortfolio/portfolio_simulation.png" alt="Portfolio Simulation">
+      </div>      
+
+      <h3>Value at Risk and Expected Portfolio Return</h3>
+      
+      <p>In risk management, Value at Risk (VaR) is a key metric used to quantify the potential loss in value of a portfolio over a specified time horizon under normal market conditions at a given confidence level. It provides investors with an estimate of the maximum loss they might incur within a certain probability.</p>
+      
+      <p>Following the Monte Carlo Simulation for the portfolio, we analyze the distribution of simulated portfolio values to compute VaR. Additionally, we determine the expected portfolio return.</p>
+      
+      <p>In this scenario, we set the confidence level, known as alpha, to 5%, corresponding to a 95% confidence interval that our portfolio's value will remain above a specified threshold.</p>
+      
+      <ul>
+      <li><strong>Value at Risk (VaR):</strong> In our analysis, we found a VaR of $1,477.96, indicating that there is a 5% chance of experiencing a loss greater than this amount over the specified time horizon.</li>
+      <li><strong>Expected Portfolio Return:</strong> The expected portfolio return provides an estimate of the average return investors can anticipate based on the simulated outcomes. In our analysis, the expected return was found to be $2,690.67, or 26.91%.</li>
+      </ul>
+      
+      <div style="text-align: center;">
+        <img src="../assets/images/stockPortfolio/portfolio_hist.png" alt="Portfolio Histogram">
+      </div>
+      
+      <blockquote>Data from Yahoo Finance (yfinance library in Python).</blockquote>
+
+  </div>
+    
+    
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
         <div class="col-md-4 d-flex align-items-center">
           <span class="mb-3 mb-md-0 text-body-secondary">© Jared Connolly 2024</span>
