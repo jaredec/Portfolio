@@ -36,6 +36,10 @@ iframe {
     background-size: cover;
 }
 
+#card-wrapper{
+    height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3));
+}
+
 
 
 pre {
@@ -205,10 +209,14 @@ pre {
         margin-top: 0.5rem;
     }
 
-    @media screen and (max-width:990px){
+    @media screen and (max-width:991px){
         .skills-container{
         grid-tempLate-columns: repeat(2, 1fr);
         padding: 2rem 50px;
+        }
+
+        #card-wrapper{
+            height: 100%;
         }
     }
 
@@ -287,6 +295,7 @@ pre {
             max-width: 100%;
             height: 70vw;
         }
+
 
     }
 /* Icons */

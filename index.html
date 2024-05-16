@@ -102,10 +102,10 @@
         <div class="container px-4 py-5" id="custom-cards">
             <h2 class="pb-2 border-bottom">My work</h2>
         
-            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div id="card-wrapper" class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
               
                 <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-1.jpg'); height: 400px;">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-1.jpg');">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-8 lh-1">Stock price forecasting & Portfolio Value at Risk</h3>
                     <ul class="d-flex list-unstyled mt-auto">
@@ -118,7 +118,7 @@
               </div>
         
               <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-3.jpg'); height: 400px;">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-3.jpg');">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-8 lh-1">Stock price forecasting & Portfolio Value at Risk</h3>
                     <ul class="d-flex list-unstyled mt-auto">
@@ -131,7 +131,7 @@
               </div>
         
               <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-2.jpg'); height: 400px;">
+                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-2 shadow-lg" style="background-image: url('./assets/images/unsplash-2.jpg');">
                   <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
                     <h3 class="pt-5 mt-5 mb-4 display-8 lh-1">Stock price forecasting & Portfolio Value at Risk</h3>
                     <ul class="d-flex list-unstyled mt-auto">
@@ -374,6 +374,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <!-- Smooth Nav-->
+
+    <script>
+        document.documentElement.style.setProperty('--document-width', document.documentElement.clientWidth + 'px');
+    </script>
     <script>
         (function($) {
             /**
