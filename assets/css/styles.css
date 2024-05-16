@@ -50,11 +50,6 @@ pre {
 
 /* Nav */ 
     /* Home Logo */
-
-    .navbar-brand:hover img {
-        filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
-    }
-
     .navbar-brand img{
         width: 35px;
     }
@@ -62,6 +57,15 @@ pre {
 /* Nav * /
 
 /* About */
+    .intro-link{
+        text-decoration: none; 
+        color: black; /* Change color to black */
+    }
+
+    .intro-link:hover {
+        color: black; /* Change color to black */
+    }
+
     .intro-info img {
         height: 10rem;
         width: 10rem;
