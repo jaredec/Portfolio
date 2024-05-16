@@ -54,6 +54,11 @@ pre {
     .navbar-brand:hover img {
         filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
     }
+
+    .navbar-brand img{
+        width: 35px;
+    }
+
 /* Nav * /
 
 /* About */
