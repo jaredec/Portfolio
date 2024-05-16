@@ -1,10 +1,14 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+    position: relative;
+    z-index: 1; /* Set a z-index value higher than the navbar */
+    padding-top: 70px;
 }
 
 footer {
     padding: 125px;
     background-color: whitesmoke;
+    text-align: center;
 }
 
 iframe {
@@ -14,17 +18,17 @@ iframe {
 }
 
 /* Projects */
-    .projects-container{
-        text-align: left;
-        padding: 6rem 10rem 4rem 10rem;
-    }
+.projects-container{
+    text-align: left;
+    padding: 6rem 20rem 4rem 20rem;
+}
 
-    .projects-img img {
-        max-width: 60%;
-        height: auto;
-        display: block;
-        
-    }
+.projects-img img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    
+}
 /* Projects */
 
 pre {
@@ -46,9 +50,6 @@ pre {
 
 /* Nav */ 
     /* Home Logo */
-    .navbar-brand img{
-        filter: invert(100%);
-    }
 
     .navbar-brand:hover img {
         filter: invert(43%) sepia(99%) saturate(567%) hue-rotate(176deg);
@@ -241,7 +242,7 @@ pre {
     /* For phones */
     @media only screen and (max-width: 767px) {
         body {
-            padding: 0px;
+            padding-top: 70px;
             width: 100%;
         }
 
@@ -286,3 +287,19 @@ pre {
 
     }
 /* Icons */
+
+.navbar {
+    transition: top 0.3s ease-in-out; /* Add transition for smoother effect */
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+    top: 0;
+}
+
+.navbar.nav-up {
+    top: -100px; /* Adjust as needed */
+}
+
+.navbar.nav-down {
+    top: 0;
+}
