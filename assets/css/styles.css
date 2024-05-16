@@ -7,9 +7,9 @@ body {
 
 footer {
     padding: 125px;
-    background-color: whitesmoke;
-    text-align: center;
+    justify-content: center;
 }
+
 
 iframe {
     max-width: 100%;
@@ -20,7 +20,7 @@ iframe {
 /* Projects */
 .projects-container{
     text-align: left;
-    padding: 6rem 20rem 4rem 20rem;
+    padding: 6vh 23vw 4vh 23vw;
 }
 
 .projects-img img {
@@ -84,21 +84,14 @@ pre {
 
     .intro-info .h1 {
         text-align: left;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-
     }
 
     .intro-info .h2 {
         text-align: left;
-        font-family: 'Roboto', sans-serif;
-        font-weight: bold;
-
     }
 
     .intro-info .h5 {
         text-align: left;
-        font-family: 'Roboto', sans-serif;
 
     }
 /* About */
