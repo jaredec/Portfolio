@@ -5,6 +5,11 @@ body {
     padding-top: 70px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit; /* Use the default text color */
+}
+
 footer {
     padding: 125px;
     justify-content: center;
@@ -29,6 +34,7 @@ iframe {
     display: block;
     
 }
+
 /* Cards */
 
 .card-cover {
