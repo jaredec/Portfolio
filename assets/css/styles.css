@@ -15,6 +15,17 @@ footer {
     justify-content: center;
 }
 
+.section-container{
+    padding-left: 0;
+}
+
+.section-title {
+    font-size: 1.65rem;
+    line-height: 130%;
+    font-weight: 400;
+    letter-spacing: -.0026em;
+}
+
 
 iframe {
     max-width: 100%;
@@ -43,12 +54,12 @@ iframe {
 }
 
 .card {
-    background-size: 100%;
+    background-size: 110%;
     transition: background-size .3s cubic-bezier(.6, 0, .4, 1); /* Apply cubic Bezier */
 }
 
 .card:hover{
-    background-size: 105%;
+    background-size: 115%;
     cursor: pointer;
 }
 
@@ -57,7 +68,7 @@ iframe {
 }
   
 #card-wrapper{
-    height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3));
+    height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3) - 4rem);
 }
 
 
