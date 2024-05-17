@@ -32,10 +32,24 @@ iframe {
 /* Cards */
 
 .card-cover {
-    background-position: center;
     background-size: cover;
+    background-position: center;
 }
 
+.card {
+    background-size: 100%;
+    transition: background-size .3s cubic-bezier(.6, 0, .4, 1); /* Apply cubic Bezier */
+}
+
+.card:hover{
+    background-size: 105%;
+    cursor: pointer;
+}
+
+.card img{
+    overflow: hidden; /* Ensure the background image stays within the card */
+}
+  
 #card-wrapper{
     height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3));
 }
