@@ -1,3 +1,62 @@
+#languages-software {
+    padding: 50px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#languages-software h2 {
+    font-size: 1.65rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+/* Grid container */
+.grid-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between items as needed */
+}
+
+/* Grid item */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Icon styling */
+.icon {
+    width: 3em; /* Adjust the size of the icons as needed */
+    height: 3em;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect */
+.icon:hover {
+    transform: scale(1.1); /* Scale up the icon on hover */
+}
+
+@media (max-width: 600px) {
+    .grid-item {
+        width: 100px;
+    }
+
+    .grid-item img,
+    .grid-item .iconify-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .grid-item p {
+        font-size: 0.875rem;
+    }
+}
+
 body {
     font-family: 'Lab Grotesque', sans-serif;
     position: relative;
@@ -206,9 +265,7 @@ pre {
         border-radius: 0 2px 2px 0;
     }
         
-    .iconify{
-        font-size: 3em;
-    }
+
 
     .iconify-icon {
         display: inline-block;
@@ -346,3 +403,4 @@ pre {
 .navbar.nav-down {
     top: 0;
 }
+
