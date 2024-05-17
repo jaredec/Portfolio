@@ -122,8 +122,9 @@ body {
 
 a {
     text-decoration: none;
-    color: inherit; /* Use the default text color */
-}X
+    color: inherit;
+    border: none; /* Use the default text color */
+}
 
 footer {
     padding: 125px;
@@ -163,14 +164,51 @@ iframe {
 
 /* Cards */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .card-cover {
+    position: relative;
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
+
+.card-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+}
+
+.card-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1rem; /* Adjust size as needed */
+}
+
+.card-footer h6 {
+    margin: 0;
+}
+
 
 .card {
     background-size: 110%;
     transition: background-size .3s cubic-bezier(.6, 0, .4, 1); /* Apply cubic Bezier */
+    box-shadow: none;
 }
 
 .card:hover{
@@ -459,4 +497,10 @@ pre {
 .navbar.nav-down {
     top: 0;
 }
+
+
+
+
+
+
 
