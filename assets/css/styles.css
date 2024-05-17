@@ -15,7 +15,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap between items as needed */
+    gap: 80px; /* Adjust the gap between items as needed */
 }
 
 /* Grid item */
@@ -42,8 +42,15 @@
 }
 
 @media (max-width: 600px) {
+    .grid-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px; /* Adjust the gap between items as needed */
+    }
+
     .grid-item {
-        width: 100px;
+        width: 50px;
     }
 
     .grid-item img,
