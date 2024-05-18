@@ -172,91 +172,83 @@ iframe {
 /* End Languages and Software */
 
 /* Cards */
-.card-cover {
-    position: relative;
-    background-size: cover;
-    background-position: center;
+section {
+    margin-bottom: 40px;
+}
+
+.card-container {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-header {
-    background: none;
-    border: none;
-}
-
-.card-footer {
-    background: none;
-    border: none;
-}
-
-.card-title {
-    margin: 0;
-    font-size: 1.25rem; /* Adjust size as needed */
-    line-height: 1.2; /* Ensure good line height */
-    word-wrap: break-word; /* Prevent long words from breaking layout */
+    justify-content: left;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
-    background-size: 110%;
-    transition: background-size .3s cubic-bezier(.6, 0, .4, 1); /* Apply cubic Bezier */
-    box-shadow: none;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.card:hover{
-    background-size: 115%;
-    cursor: pointer;
-}
-
-.card img{
-    overflow: hidden; /* Ensure the background image stays within the card */
-}
-  
-#card-wrapper{
+.card-image {
     height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3) - 4rem);
+    position: relative;
+    overflow: hidden; /* Ensure that the pseudo-element stays within the bounds of .card-image */
 }
 
-.text-shadow-1 { text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25); }
-.text-shadow-2 { text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25); }
-.text-shadow-3 { text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25); }
+.card-image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
 
-@media (max-width: 576px) {
-    .card-cover {
-        padding: 10px; /* Reduce padding on smaller screens */
-        height: auto; /* Let content define the height on small screens */
-        min-height: 200px; /* Set a minimum height to prevent it from getting too small */
-    }
-    .card-title {
-        font-size: 1rem; /* Adjust the font size for smaller screens */
-        line-height: 1.2; /* Maintain good line height */
-    }
-    .card-footer h6 {
-        font-size: 0.875rem; /* Adjust the font size for smaller screens */
-    }
-    .d-flex {
-        padding: 5px; /* Add padding inside flex container */
+.card-image:hover::before {
+    transform: scale(1.1); /* Zoom in by 10% on hover */
+}
+
+
+.card-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    #card-wrapper{
-        height: 100%;
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
     }
 }
 
-@media (min-width: 768px) {
-    .card-header {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
-
-    .card-footer {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        margin-top: 0; /* Reset margin-top added for smaller screens */
-    }
-}
 /* End Cards */
 
 /* Get in Touch */
@@ -338,10 +330,4 @@ iframe {
         height: 70vw;
     }
 }
-
-
-
-
-
-
 
