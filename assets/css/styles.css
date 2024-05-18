@@ -172,15 +172,33 @@ iframe {
 /* End Languages and Software */
 
 /* Cards */
+/* Cards */
 section {
     margin-bottom: 40px;
 }
 
+.title-and-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust the spacing between title/arrows and carousel */
+}
+
+.section-title {
+    flex-grow: 1;
+}
+
+.arrows {
+    display: flex;
+    gap: 10px; /* Adjust the spacing between the arrows */
+}
+
 .card-container {
     display: flex;
-    justify-content: left;
+    overflow-x: auto;
+    scroll-behavior: smooth;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
 }
 
 .card {
@@ -190,6 +208,7 @@ section {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    flex: 0 0 auto; /* Ensure the cards don't shrink or grow */
 }
 
 .card-image {
@@ -215,7 +234,6 @@ section {
     transform: scale(1.1); /* Zoom in by 10% on hover */
 }
 
-
 .card-label {
     position: absolute;
     top: 10px;
@@ -236,18 +254,66 @@ section {
     font-size: 0.9em;
 }
 
+.carousel-arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
 
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .card-container {
-        flex-direction: column;
+    .title-and-arrows {
+        flex-direction: row;
         align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-image{
+        height: 300px;
+    }
+
+    .card-container {
+        gap: 15px; /* Reduce gap between cards on smaller screens */
     }
 
     .card {
-        width: 80%;
-        margin-bottom: 20px;
+        width: 250px; /* Adjust card width for smaller screens */
     }
 }
+
+@media (max-width: 480px) {
+    .title-and-arrows {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .arrows {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+
+    .card-container {
+        gap: 10px; /* Further reduce gap between cards on very small screens */
+    }
+
+    .card {
+        width: 60%; /* Make cards take the full width on very small screens */
+        max-width: 300px; /* Ensure cards don't exceed their original width */
+    }
+
+    .carousel-arrow {
+        padding: 5px;
+    }
+}
+
+
+
 
 /* End Cards */
 

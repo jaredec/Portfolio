@@ -101,7 +101,7 @@
 
         <div class="container px-4 py-5" id="myWork">
             <h2 class="section-title">My Work</h2>
-            
+
             <div class="card-container">
                 <div class="card">
                     <div class="card-image" style="background-image: url('./assets/images/unsplash-3.jpg');">
@@ -353,6 +353,28 @@
         })(jQuery);
     </script>
     
+    <!-- Carousel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            const cardContainer = document.querySelector('.card-container');
+    
+            leftArrow.addEventListener('click', () => {
+                cardContainer.scrollBy({
+                    left: -300, // Adjust this value according to your card width
+                    behavior: 'smooth'
+                });
+            });
+    
+            rightArrow.addEventListener('click', () => {
+                cardContainer.scrollBy({
+                    left: 300, // Adjust this value according to your card width
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
     
 
 
