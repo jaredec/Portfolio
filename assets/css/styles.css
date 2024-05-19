@@ -172,25 +172,12 @@ iframe {
 /* End Languages and Software */
 
 /* Cards */
-/* Cards */
 section {
     margin-bottom: 40px;
 }
 
-.title-and-arrows {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px; /* Adjust the spacing between title/arrows and carousel */
-}
-
 .section-title {
     flex-grow: 1;
-}
-
-.arrows {
-    display: flex;
-    gap: 10px; /* Adjust the spacing between the arrows */
 }
 
 .card-container {
@@ -212,7 +199,7 @@ section {
 }
 
 .card-image {
-    height: calc((((var(--document-width) - 2.5rem - (.84375rem * 2)) * 4 / 3) / 3) - 4rem);
+    aspect-ratio: 7.5 / 10;
     position: relative;
     overflow: hidden; /* Ensure that the pseudo-element stays within the bounds of .card-image */
 }
@@ -254,30 +241,8 @@ section {
     font-size: 0.9em;
 }
 
-.carousel-arrow {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
 /* Responsive Styles */
-@media (max-width: 768px) {
-    .title-and-arrows {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .card-image{
-        height: 300px;
-    }
-
+@media (max-width: 1000px) {
     .card-container {
         gap: 15px; /* Reduce gap between cards on smaller screens */
     }
@@ -288,16 +253,6 @@ section {
 }
 
 @media (max-width: 480px) {
-    .title-and-arrows {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .arrows {
-        margin-top: 10px;
-        align-self: flex-end;
-    }
-
     .card-container {
         gap: 10px; /* Further reduce gap between cards on very small screens */
     }
@@ -307,8 +262,11 @@ section {
         max-width: 300px; /* Ensure cards don't exceed their original width */
     }
 
-    .carousel-arrow {
-        padding: 5px;
+}
+
+@media (min-width: 769px) {
+    .card {
+        width: calc((100% - 40px) / 3); /* Subtract 20px per gap */
     }
 }
 
