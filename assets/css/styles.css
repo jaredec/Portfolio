@@ -196,6 +196,12 @@ section {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto; /* Ensure the cards don't shrink or grow */
+    position: relative;
+    transition: background-color 0.3s ease; /* Add transition for background color */
+}
+
+.card:hover {
+    background-color: #333; /* Darker background on hover */
 }
 
 .card-image {
@@ -221,24 +227,48 @@ section {
     transform: scale(1.1); /* Zoom in by 10% on hover */
 }
 
-.card-label {
+.card-label,
+.card-content {
     position: absolute;
-    top: 10px;
-    left: 10px;
     color: white;
     padding: 5px 10px;
     border-radius: 3px;
     font-size: 0.9em;
+    opacity: 1; /* Ensure visible by default */
+    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+}
+
+.card-label {
+    top: 10px;
+    left: 10px;
 }
 
 .card-content {
-    position: absolute;
     bottom: 10px;
     left: 10px;
+}
+
+.card-hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     padding: 5px 10px;
     border-radius: 3px;
-    font-size: 0.9em;
+    font-size: 1em;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+    pointer-events: none; /* Prevent interaction */
+}
+
+.card:hover .card-content,
+.card:hover .card-label {
+    opacity: 0; /* Hide original text on hover */
+}
+
+.card:hover .card-hover-text {
+    opacity: 1; /* Show new text on hover */
 }
 
 /* Responsive Styles */
@@ -261,7 +291,6 @@ section {
         width: 60%; /* Make cards take the full width on very small screens */
         max-width: 300px; /* Ensure cards don't exceed their original width */
     }
-
 }
 
 @media (min-width: 769px) {
