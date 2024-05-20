@@ -64,107 +64,101 @@
     
     <!-- Your markdown content converted to HTML -->
     <div class="projects-container">
-
-        <h2>Netflix Data Cleaning and Visualization</h2>
-
-        <p><strong>Project description:</strong> This project involves the analysis of Netflix movie and TV show data from 2008 to 2021. Leveraging SQL for data cleaning and transformation, the dataset is then prepared for interactive visualization using Tableau, enabling the exploration of content trends, genres, and other valuable insights.</p>
-
-        <h3>Dataset</h3>
-
-        <p>The dataset was obtained from <a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Kaggle</a>, comprising listings of all the movies and TV shows available on Netflix from 2008 to 2021. The dataset consists of 12 columns and 8807 rows of data in a structured CSV format. These columns include:</p>
-
-        <ul>
-        <li><strong>Show ID:</strong> Unique identifier.</li>
-        <li><strong>Type:</strong> Movie or a TV show.</li>
-        <li><strong>Title:</strong> Content title.</li>
-        <li><strong>Director:</strong> Director(s).</li>
-        <li><strong>Cast:</strong> Movie/TV show cast.</li>
-        <li><strong>Country:</strong> Production country/countries.</li>
-        <li><strong>Release Year:</strong> The year when the movie or TV show was released.</li>
-        <li><strong>Rating:</strong> Content rating (e.g., PG, TV-MA).</li>
-        <li><strong>Duration:</strong> The duration in minutes.</li>
-        <li><strong>Listed in:</strong> Genre(s) on Netflix.</li>
-        <li><strong>Description:</strong> Brief description or synopsis.</li>
-        <li><strong>Date Added:</strong> Date when added to Netflix.</li>
-        </ul>
-
-        <h3>Cleaning the data with SQL</h3>
-
-        <p>While this dataset is considerably clean, we still need to make a few adjustments such as removing duplicates, populating null values, and preparing the data for visualization. I have included the first step in the process below:</p>
-
-        <h4>Check for duplicates</h4>
-
-        <pre>
-        SELECT show_id, Occurrence = COUNT(*)
-        FROM NetflixData
-        GROUP BY show_id
-        HAVING COUNT(*) > 1
-        </pre>
-
-        <p>No duplicates</p>
-
-        <h4>Double check using the description column:</h4>
-
-        <pre>
-        SELECT description, description_count = COUNT(*)
-        FROM NetflixData
-        GROUP BY description
-        HAVING COUNT(*) > 1
-        </pre>
-
-        <p>There are instances where the movie is the same but dubbed in another language. These will be removed as it will inflate results for that title</p>
-
-        <h4>Delete the duplicates:</h4>
-
-        <pre>
-        WITH DupeCTE as
-        (
-            SELECT *, ROW_NUMBER()
-            OVER (PARTITION BY description
-            ORDER BY description) 
-            AS RowNumber FROM NetflixData
-        ) 
-
-        DELETE
-        FROM DupeCTE
-        WHERE RowNumber > 1
-        </pre>
-
-        <p>View the full SQL code <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/net/NetflixData.sql" target="_blank">here</a>.</p>
-
-        <h3>Visualizing the Data in Tableau</h3>
-
-        <p>View the dashboard in Tableau Public <a href="https://public.tableau.com/views/NetflixInteractiveDashboard_16881575833210/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">here</a>.</p>
-
-        <h4>Dashboard Features</h4>
-
-        <ul>
-        <li><strong>Filters:</strong> Users can utilize filters located in the upper right corner of the dashboard to sort and filter content based on specific criteria such as genre, release year, country, and type (movie or TV show).</li>
-        <li><strong>Interactive Charts:</strong> The dashboard includes interactive charts and visualizations that dynamically update based on user selections. These charts provide insights into content distribution, trends over time, and other relevant metrics.</li>
-        <li><strong>Geographical Analysis:</strong> Users can explore content availability and preferences across different countries using interactive maps and geographical filters.</li>
-        </ul>
-
-        <h4>Dashboard Navigation</h4>
-
-        <p>Users can navigate through the dashboard by clicking directly on the visualizations or using the interactive filters to refine their selection criteria. In case the "Reset Filters" button experiences difficulty caching, refresh your page to ensure the filters reset properly.</p>
-
-        <h4>Example Use Cases</h4>
-
-        <p>Filtering by TV Shows in India:</p>
-
-        <div class="projects-img">
-            <img src="../assets/images/net/net_demo1.gif" alt="TV Shows in India Demo">
-        </div>
-
-        <p>Alternatively, you can also filter by clicking directly on the dashboard; filtering by content in Japan:</p>
-
-        <div class="projects-img">
-            <img src="../assets/images/net/net_demo2.gif" alt="Content in Japan Demo">
-        </div>
-
-        <p>Data from <a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Kaggle</a>.</p>
-
-    </div>
+      <div class="container">
+          <div class="header">
+            <p>July 1, 2023</p>
+            <h1>Netflix Data Cleaning and Visualization</h1>
+          </div>
+  
+          <div class="content">
+              <p><strong>Project description:</strong> This project involves the analysis of Netflix movie and TV show data from 2008 to 2021. Leveraging SQL for data cleaning and transformation, the dataset is then prepared for interactive visualization using Tableau, enabling the exploration of content trends, genres, and other valuable insights.</p>
+  
+              <h3>Dataset</h3>
+              <p>The dataset was obtained from <a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Kaggle</a>, comprising listings of all the movies and TV shows available on Netflix from 2008 to 2021. The dataset consists of 12 columns and 8807 rows of data in a structured CSV format. These columns include:</p>
+  
+              <ul>
+                  <li><strong>Show ID:</strong> Unique identifier.</li>
+                  <li><strong>Type:</strong> Movie or a TV show.</li>
+                  <li><strong>Title:</strong> Content title.</li>
+                  <li><strong>Director:</strong> Director(s).</li>
+                  <li><strong>Cast:</strong> Movie/TV show cast.</li>
+                  <li><strong>Country:</strong> Production country/countries.</li>
+                  <li><strong>Release Year:</strong> The year when the movie or TV show was released.</li>
+                  <li><strong>Rating:</strong> Content rating (e.g., PG, TV-MA).</li>
+                  <li><strong>Duration:</strong> The duration in minutes.</li>
+                  <li><strong>Listed in:</strong> Genre(s) on Netflix.</li>
+                  <li><strong>Description:</strong> Brief description or synopsis.</li>
+                  <li><strong>Date Added:</strong> Date when added to Netflix.</li>
+              </ul>
+  
+              <h3>Cleaning the data with SQL</h3>
+              <p>While this dataset is considerably clean, we still need to make a few adjustments such as removing duplicates, populating null values, and preparing the data for visualization. I have included the first step in the process below:</p>
+  
+              <h4>Check for duplicates</h4>
+              <pre>
+  SELECT show_id, Occurrence = COUNT(*)
+  FROM NetflixData
+  GROUP BY show_id
+  HAVING COUNT(*) > 1
+              </pre>
+              <p>No duplicates</p>
+  
+              <h4>Double check using the description column:</h4>
+              <pre>
+  SELECT description, description_count = COUNT(*)
+  FROM NetflixData
+  GROUP BY description
+  HAVING COUNT(*) > 1
+              </pre>
+              <p>There are instances where the movie is the same but dubbed in another language. These will be removed as it will inflate results for that title</p>
+  
+              <h4>Delete the duplicates:</h4>
+              <pre>
+  WITH DupeCTE as
+  (
+      SELECT *, ROW_NUMBER()
+      OVER (PARTITION BY description
+      ORDER BY description) 
+      AS RowNumber FROM NetflixData
+  ) 
+  
+  DELETE
+  FROM DupeCTE
+  WHERE RowNumber > 1
+              </pre>
+              <p>View the full SQL code <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/net/NetflixData.sql" target="_blank">here</a>.</p>
+  
+              <h3>Visualizing the Data in Tableau</h3>
+              <p>View the dashboard in Tableau Public <a href="https://public.tableau.com/views/NetflixInteractiveDashboard_16881575833210/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank">here</a>.</p>
+  
+              <h4>Dashboard Features</h4>
+              <ul>
+                  <li><strong>Filters:</strong> Users can utilize filters located in the upper right corner of the dashboard to sort and filter content based on specific criteria such as genre, release year, country, and type (movie or TV show).</li>
+                  <li><strong>Interactive Charts:</strong> The dashboard includes interactive charts and visualizations that dynamically update based on user selections. These charts provide insights into content distribution, trends over time, and other relevant metrics.</li>
+                  <li><strong>Geographical Analysis:</strong> Users can explore content availability and preferences across different countries using interactive maps and geographical filters.</li>
+              </ul>
+  
+              <h4>Dashboard Navigation</h4>
+              <p>Users can navigate through the dashboard by clicking directly on the visualizations or using the interactive filters to refine their selection criteria. In case the "Reset Filters" button experiences difficulty caching, refresh your page to ensure the filters reset properly.</p>
+  
+              <h4>Example Use Cases</h4>
+              <p>Filtering by TV Shows in India:</p>
+  
+              <div class="projects-img">
+                  <img src="../assets/images/net/net_demo1.gif" alt="TV Shows in India Demo">
+              </div>
+  
+              <p>Alternatively, you can also filter by clicking directly on the dashboard; filtering by content in Japan:</p>
+  
+              <div class="projects-img">
+                  <img src="../assets/images/net/net_demo2.gif" alt="Content in Japan Demo">
+              </div>
+  
+              <blockquote>Data from <a href="https://www.kaggle.com/datasets/shivamb/netflix-shows" target="_blank">Kaggle</a>.</blockquote>
+          </div>
+      </div>
+  </div>
+  
     
     
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
