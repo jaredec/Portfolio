@@ -2,7 +2,6 @@ body {
     font-family: 'Lab Grotesque', sans-serif;
     position: relative;
     z-index: 1; /* Set a z-index value higher than the navbar */
-    padding-top: 70px;
 }
 
 a {
@@ -66,7 +65,7 @@ iframe {
 .navbar.nav-down {
     top: 0;
 }
-/* End Nav * /
+/* End Nav */
 
 /* Languages and Software */
 #languages, #software {
@@ -75,39 +74,24 @@ iframe {
     background-color: #fff;
 }
 
-#languages h2 {
+#languages h2, #software h2 {
     font-size: 1.65rem;
     margin-bottom: 30px;
     color: #111;
 }
 
-#software h2 {
-    font-size: 1.65rem;
-    margin-bottom: 30px;
-    color: #111;
-}
-
-#languages .grid-container {
+#languages .grid-container, #software .grid-container {
     padding-top: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px; 
-
 }
 
-#languages .grid-container > * {
+#languages .grid-container > *, #software .grid-container > * {
     flex: 1 1 calc(20% - 50px); 
     max-width: calc(20% - 50px); 
     box-sizing: border-box; 
-}
-
-#software .grid-container {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 #software .grid-container > * {
@@ -137,20 +121,14 @@ iframe {
 }
 
 @media (max-width: 600px) {
-    #languages .grid-container {
+    #languages .grid-container, #software .grid-container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
         gap: 20px; 
     }
 
-    #languages .grid-container > * {
-        flex: 1 1 calc(50% - 50px); 
-        max-width: calc(50% - 50px); 
-        box-sizing: border-box; 
-    }
-    
-    #software .grid-container > * {
+    #languages .grid-container > *, #software .grid-container > * {
         flex: 1 1 calc(50% - 50px); 
         max-width: calc(50% - 50px); 
         box-sizing: border-box; 
@@ -197,7 +175,7 @@ section {
     flex-direction: column;
     flex: 0 0 auto; /* Ensure the cards don't shrink or grow */
     position: relative;
-    transition: background-color 0.3s ease; /* Add transition for background color */
+    transition: background-color 0.3s ease, -webkit-transform 0.3s ease; /* Add transition for background color */
 }
 
 .card:hover {
@@ -208,6 +186,9 @@ section {
     aspect-ratio: 7.5 / 10;
     position: relative;
     overflow: hidden; /* Ensure that the pseudo-element stays within the bounds of .card-image */
+    background-image: url('your-image-url.jpg'); /* Set your image URL */
+    background-size: cover;
+    background-position: center;
 }
 
 .card-image::before {
@@ -217,14 +198,13 @@ section {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: inherit;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
+    background: inherit;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease; /* Add transition for smooth effect */
 }
 
-.card-image:hover::before {
+.card:hover .card-image::before {
     transform: scale(1.1); /* Zoom in by 10% on hover */
+    -webkit-transform: scale(1.1); /* Zoom in by 10% on hover */
 }
 
 .card-label,
@@ -298,93 +278,68 @@ section {
         width: calc((100% - 40px) / 3); /* Subtract 20px per gap */
     }
 }
-
-
-
-
 /* End Cards */
 
 /* Get in Touch */
-    .intro-link{
-        text-decoration: none; 
-        color: black; /* Change color to black */
-    }
-
-    .intro-link:hover {
-        color: black; /* Change color to black */
-    }
-
-    .intro-info img {
-        height: 10rem;
-        width: 10rem;
-        border-radius: 50%;
-        margin: .9rem 0 0 0;
-        float: left;
-    }
-
-    .intro-info .lead {
-        text-align: left;
-    }
-
-    .fzkLtX {
-        box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
-        transition: box-shadow 0.3s ease-out 0s;
-    }
-
-    .h3 {
-        font-weight: 700;
-        font-size: 1.75rem;
-        line-height: 2.25rem;
-        color: rgb(0, 0, 0);
-        margin-bottom: 3rem;
-    }
-
-    .intro-info .h1 {
-        text-align: left;
-    }
-
-    .intro-info .h2 {
-        text-align: left;
-    }
-
-    .intro-info .h5 {
-        text-align: left;
-
-    }
-/* End Get In Touch */
-
-/* MOBILE CSS */
-@media only screen and (max-width: 767px) {
-    body {
-        padding-top: 70px;
-        width: 100%;
-    }
-
-    .intro-info img {
-        height: 6rem;
-        width: 6rem;
-        border-radius: 50%;
-        margin: .9rem 0 0 0;
-        float: left;
-    }
-
-    .intro-info .lead {
-        text-align: left;
-        padding-left: 7rem;
-        font-size: 1rem;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
-
-    iframe {
-        max-width: 100%;
-        height: 70vw;
-    }
+.intro-link {
+    text-decoration: none; 
+    color: black; /* Change color to black */
 }
 
+.intro-link:hover {
+    color: black; /* Change color to black */
+}
+
+.intro-info {
+    padding-top: 70px;
+}
+
+.intro-info img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: .9rem 0 0 0;
+    float: left;
+}
+
+.intro-info .lead {
+    text-align: left;
+}
+
+.fzkLtX {
+    box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
+    transition: box-shadow 0.3s ease-out 0s;
+}
+
+.h3 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    color: rgb(0, 0, 0);
+    margin-bottom: 3rem;
+}
+
+.intro-info .h1 {
+    text-align: left;
+}
+
+.intro-info .h2 {
+    text-align: left;
+}
+
+.intro-info .h5 {
+    text-align: left;
+}
+/* End Get In Touch */
+
+
 /* Projects */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .projects-container {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -392,12 +347,12 @@ section {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
+    padding-top: 70px;
 }
 
 .projects-container .container {
     padding: 90px;
     max-width: 800px;
-
 }
 
 .projects-container .header {
@@ -417,7 +372,6 @@ section {
     margin: 20px auto;
     padding: 20px;
     background: #fff;
-    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -465,4 +419,35 @@ section {
     font-size: 20px;
     margin-bottom: 10px;
 }
+/* End Projects */
 
+/* MOBILE CSS */
+@media only screen and (max-width: 767px) {
+    body {
+        padding-top: 70px;
+        width: 100%;
+    }
+
+    .intro-info img {
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        margin: .9rem 0 0 0;
+        float: left;
+    }
+
+    .intro-info .lead {
+        text-align: left;
+        padding-left: 7rem;
+        font-size: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    iframe {
+        max-width: 100%;
+        height: 70vw;
+    }
+}
