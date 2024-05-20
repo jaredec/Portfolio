@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lab+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
         <symbol id="facebook" viewBox="0 0 16 16">
           <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
@@ -21,15 +19,16 @@
           <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path>
         </symbol>
       </svg>
-    <link href="../assets/css/styles.css" rel="stylesheet">
+    <link href="./assets/css/styles.css" rel="stylesheet">
     <title>Jared Connolly</title>
-  </head>
+</head>
 
 <body class="bg-light">
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-light" aria-label="navbar">
         <div class="container">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../assets/images/homeIcon.png" alt="Home">
+            <a class="navbar-brand" href="index.html">
+                <img src="./assets/images/homeIcon.png" alt="Home">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,7 +40,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="./projects/stockPortfolio.html">Projects</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Contact</a>
@@ -61,137 +60,16 @@
           </div>
         </div>
     </nav>
-    
-    <!-- Your markdown content converted to HTML -->
-    <div class="projects-container">
-        <div class="container">
-            <div class="header">
-                <p>August 1, 2024</p>
-                <h1>Exploratory Data Analysis on Unemployment Trends</h1>
-            </div>
-    
-            <div class="content">
-                <p><strong>Project description:</strong> This project utilizes data from the Federal Reserve Economic Data (FRED) API to analyze unemployment rates at various levels: national, state, and industry-specific. By visualizing and examining unemployment trends, the project aims to provide insights into the impact of economic factors on employment across different regions and sectors.</p>
-    
-                <h3>Importing the FRED API</h3>
-                <p>The initial step involves importing the 'fredapi' library and establishing the connection with a provided API key, which is securely stored as an environment variable. Subsequently, a 'fred' object is created, enabling access to economic data for analysis.</p>
-    
-                <pre>
-    from fredapi import Fred
-    fred_key = os.environ.get('fred_api_key')
-    fred = Fred(api_key=fred_key)
-                </pre>
-    
-                <p>Now raw data can be pulled straight into my notebook.</p>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/uemp.png" alt="Overall Unemployment Rate (1948- )">
-                </div>
-    
-                <h3>Unemployment by State (1976- )</h3>
-                <p>While it's easy to plot certain data, such as the overall unemployment rate, visualizing specific insights requires us to clean and reorganize the data through transformations.</p>
-                <p>Here we want to visualize unemployment rates across U.S. states. See the process of transforming data in Python with the following code snippets:</p>
-    
-                <h4>Filtering and Cleaning Data</h4>
-                <pre>
-    uemp_state = fred.search('unemployment rate state', filter=('frequency','Monthly'))
-    
-    uemp_state = uemp_state.query('seasonal_adjustment == "Seasonally Adjusted" and units == "Percent"')
-    
-    uemp_state = uemp_state.loc[uemp_state['title'].str.contains('Unemployment Rate in')]
-    
-    uemp_state = uemp_state.loc[uemp_state['id'].str.len() == 4]
-    
-    uemp_state = uemp_state.drop('DCUR')
-    uemp_state = uemp_state.drop('PRUR')
-                </pre>
-                <p>In this section, we filter the unemployment data by frequency (monthly), seasonal adjustment (seasonally adjusted), and units (percentage). We also narrow down to titles specifically related to "Unemployment Rate in" and remove entries for Washington DC and Puerto Rico, as they're not states.</p>
-    
-                <h4>Retrieving and Combining Data</h4>
-                <pre>
-    all_results = []
-    for myid in uemp_state.index:
-        results = fred.get_series(myid)
-        results = results.to_frame(name=myid)
-        all_results.append(results)
-    
-    uemp_state_results = pd.concat(all_results, axis = 1)
-                </pre>
-                <p>Retrieve the unemployment data for each state by iterating over the filtered IDs. Then combine all the data into a single dataframe.</p>
-    
-                <h4>Renaming Columns</h4>
-                <pre>
-    id_to_state = uemp_state['title'].str.replace('Unemployment Rate in ','').to_dict()
-    uemp_state_results.columns = [id_to_state[i] for i in uemp_state_results.columns]
-                </pre>
-                <p>Here, we replace the IDs in the column names of the dataframe with the corresponding state names.</p>
-    
-                <h4>Plotting</h4>
-                <pre>
-    px.line(uemp_state_results, title='Unemployment Rates by State')
-                </pre>
-    
-                <div>
-                    <iframe src="../assets/plotly/statePlot.html"></iframe>
-                </div>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/stateBar.png" alt="Unemployment Rates by State">
-                </div>
-    
-                <h4>County Plots</h4>
-                <div>
-                    <iframe src="../assets/plotly/countyPlot.html"></iframe>
-                </div>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/countyBar.png" alt="County Plots">
-                </div>
-    
-                <h4>Industry Plot</h4>
-                <div>
-                    <iframe src="../assets/plotly/industryPlot.html"></iframe>
-                </div>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/industryBar.png" alt="Industry Plot">
-                </div>
-    
-                <h3>Unemployment vs Key Economic Indicators</h3>
-                <p>Now let's examine how the unemployment rate correlates with various key economic metrics sourced from FRED. These indicators provide insights into different aspects of the economy and might help us understand the factors driving employment trends.</p>
-                <p>Our exploration begins with a look at SPY, a well-known benchmark for the U.S. stock market's performance:</p>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/spyPlot.png" alt="SPY Plot">
-                </div>
-    
-                <p>From there, we move on to explore other critical indicators, each providing unique insights into different aspects of the economy:</p>
-    
-                <ul>
-                    <li><strong>Industrial Production</strong>: Output of the industrial sector of the economy, including manufacturing, mining, and utilities.</li>
-                    <li><strong>Consumer Sentiment Index</strong>: Measure of consumer confidence regarding the overall state of the economy.</li>
-                    <li><strong>Participation Rate</strong>: Percentage of working-age individuals who are either employed or actively seeking employment.</li>
-                    <li><strong>All Employees</strong>: Total number of non-farm payroll jobs in the economy.</li>
-                    <li><strong>Consumer Price Index</strong>: Average change over time in the prices paid by urban consumers for a basket of goods and services.</li>
-                    <li><strong>Federal Funds Effective Rate</strong>: Interest rate at which banks lend money to each other overnight without requiring collateral.</li>
-                    <li><strong>Real GDP</strong>: Total value of all goods and services produced within a country's borders adjusted for inflation.</li>
-                    <li><strong>Money Supply</strong>: Total amount of money in circulation within an economy.</li>
-                </ul>
-    
-                <div class="projects-img">
-                    <img src="../assets/images/unemp/indicatorsPlot.png" alt="Key Economic Indicators Plot">
-                </div>
-    
-                <p>See the Jupyter Notebook with full code for the project <a href="https://github.com/jaredec/jaredec.github.io/blob/master/projects/unemp/unemp.ipynb" target="_blank">here</a>.</p>
-    
-                <blockquote>Data from <a href="https://fred.stlouisfed.org/" target="_blank">Federal Reserve Bank of St. Louis</a>.</blockquote>
-            </div>
-        </div>
+
+    <div class="container">
+
+        
+
     </div>
     
-    
-    
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top">
+    <!-- Footer -->
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top bg-light">
         <div class="col-md-4 d-flex align-items-center">
           <span class="mb-3 mb-md-0 text-body-secondary">© Jared Connolly 2024</span>
         </div>
@@ -202,7 +80,7 @@
           <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
         </ul>
     </footer>
-
+    
     <!-- JavaScript -->     
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -210,6 +88,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
     <!-- Smooth Nav-->
+
+    <script>
+        document.documentElement.style.setProperty('--document-width', document.documentElement.clientWidth + 'px');
+    </script>
     <script>
         (function($) {
             /**
@@ -260,6 +142,7 @@
             pageScroll();
         })(jQuery);
     </script>
+    
 
 </body>
 </html>
