@@ -260,19 +260,48 @@ section {
     color: white;
     padding: 5px 10px;
     border-radius: 3px;
-    font-size: 0.9em;
     opacity: 1; /* Ensure visible by default */
     transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+    z-index: 1;
 }
 
-.card-label {
+.card-label,
+.blurred-label {
     top: 10px;
     left: 10px;
+    font-size: 0.9rem;
 }
 
-.card-content {
+.card-content,
+.blurred-content {
     bottom: 10px;
     left: 10px;
+    font-size: 1.125rem;
+
+}
+
+.blurred-label {
+    filter: blur(30px);
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 2px currentcolor;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 3px;
+    opacity: 1; /* Ensure visible by default */
+    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+    
+}
+
+.blurred-content {
+    filter: blur(30px);
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 2px currentcolor;
+    position: absolute;
+    padding: 5px 10px;
+    border-radius: 3px;
+    opacity: 1; /* Ensure visible by default */
+    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+    
 }
 
 .card-hover-text {
@@ -290,7 +319,9 @@ section {
 }
 
 .card:hover .card-content,
-.card:hover .card-label {
+.card:hover .card-label, 
+.card:hover .blurred-content, 
+.card:hover .blurred-label{
     opacity: 0; /* Hide original text on hover */
 }
 
