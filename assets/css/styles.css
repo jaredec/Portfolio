@@ -46,141 +46,69 @@ iframe {
 }
 
 /* Nav */ 
-/* General Styles */
-section {
-    margin-bottom: 40px;
-}
-
-.section-title {
-    flex-grow: 1;
-}
-
-/* Card Container Styles */
-.card-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 20px;
-    flex-wrap: nowrap; /* Prevent wrapping to a new line */
-}
-
-/* Card Styles */
-.card {
-    background-color: #fff;
-    border-radius: 8px;
-    width: 300px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto; /* Ensure the cards don't shrink or grow */
-    position: relative;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for background color */
-}
-
-.card:hover {
-    background-color: #333; /* Darker background on hover */
-}
-
-.card-image {
-    aspect-ratio: 7.5 / 10;
-    position: relative;
-    overflow: hidden; /* Ensure that the pseudo-element stays within the bounds of .card-image */
-    background-size: cover;
-    background-position: center;
-}
-
-.card-image::before {
-    content: "";
-    position: absolute;
+.navbar {
+    transition: top 0.3s ease-in-out; 
+    position: fixed;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    transition: transform 0.3s ease; /* Add transition for smooth effect */
 }
 
-.card:hover .card-image::before {
-    transform: scale(1.1); /* Zoom in by 10% on hover */
+.navbar-brand img {
+    width: 35px;
 }
 
-.card-label,
-.card-content {
-    position: absolute;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 0.9em;
-    opacity: 1; /* Ensure visible by default */
-    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
+.navbar.nav-up {
+    top: -100px; 
 }
 
-.card-label {
-    top: 10px;
-    left: 10px;
+.navbar.nav-down {
+    top: 0;
 }
 
-.card-content {
-    bottom: 10px;
-    left: 10px;
+.navbar-nav {
+    flex-direction: row;
+    align-items: center;
 }
 
-.card-hover-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 1em;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease; /* Smooth transition for text visibility */
-    pointer-events: none; /* Prevent interaction */
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
 }
 
-.card:hover .card-content,
-.card:hover .card-label {
-    opacity: 0; /* Hide original text on hover */
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%288, 8, 8, 0.5%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-.card:hover .card-hover-text {
-    opacity: 1; /* Show new text on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 1000px) {
-    .card-container {
-        gap: 15px; /* Reduce gap between cards on smaller screens */
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    .card {
-        width: 250px; /* Adjust card width for smaller screens */
+    
+    .d-lg-flex {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .dropdown-menu {
+        width: 100%;
     }
 }
 
-@media (max-width: 768px) {
-    .card-container {
-        flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
-        gap: 10px; /* Further reduce gap between cards on very small screens */
+@media (max-width: 576px) {
+    .navbar-brand {
+        margin-right: auto;
     }
-
-    .card {
-        width: 80%; /* Make cards take most of the width on small screens */
-        max-width: 300px; /* Ensure cards don't exceed their original width */
-    }
-
-}
-
-@media (max-width: 480px) {
-    .card {
-        width: 100%; /* Make cards take the full width on very small screens */
-    }
-}
-
-@media (min-width: 769px) {
-    .card {
-        width: calc((100% - 40px) / 3); /* Adjust width for larger screens */
+    
+    .d-lg-flex {
+        justify-content: flex-end;
+        margin-top: 0;
     }
 }
 
