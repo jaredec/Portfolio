@@ -65,6 +65,11 @@ iframe {
 .navbar.nav-down {
     top: 0;
 }
+.navbar-nav {
+    flex-direction: row;
+    align-items: center;
+}
+
 /* End Nav */
 
 /* Languages and Software */
