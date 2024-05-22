@@ -368,45 +368,24 @@ section {
 /* End Cards */
 
 /* Get in Touch */
-.intro-link {
+.landing-link {
     text-decoration: none; 
     color: black; /* Change color to black */
 }
 
-.intro-link:hover {
+.landing-link:hover {
     color: black; /* Change color to black */
 }
 
-.intro-info {
+.landing-info {
     padding-top: 70px;
 }
 
-.intro-info img {
-    height: 10rem;
-    width: 10rem;
-    border-radius: 50%;
-    margin: .9rem 0 0 0;
-    float: left;
-}
-
-.fzkLtX {
-    box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
-    transition: box-shadow 0.3s ease-out 0s;
-}
-
-.h3 {
-    font-weight: 700;
-    font-size: 1.75rem;
-    line-height: 2.25rem;
-    color: rgb(0, 0, 0);
-    margin-bottom: 3rem;
-}
-
-.intro-info .h2 {
+.landing-info .h2 {
     text-align: left;
 }
 
-.intro-info .h5 {
+.landing-info .h5 {
     text-align: left;
 }
 /* End Get In Touch */
@@ -547,3 +526,55 @@ section {
     }
 
 }
+
+/* Contact Section */
+.contact-container {
+    text-align: center; /* Aligns text to the left within the container */
+  }
+  
+  .section-title {
+    text-align: left; /* Ensures the title is left-aligned */
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .contact-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  .contact-photo {
+    width: 150px;
+    border-radius: 50%;
+    margin-right: 20px; /* Adjusted margin */
+  }
+  
+  .contact-info {
+    color: #333;
+    text-align: left; /* Keeps text aligned to the left */
+  }
+  
+  .contact-email {
+    box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
+    transition: box-shadow 0.3s ease-out 0s;
+  }
+  
+  .contact-links {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .intro-link {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+  
+  .intro-link svg {
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+
+  
