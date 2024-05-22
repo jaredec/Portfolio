@@ -414,30 +414,5 @@
         })(jQuery);
     </script>
     
-    <!-- Carousel -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const leftArrow = document.querySelector('.left-arrow');
-            const rightArrow = document.querySelector('.right-arrow');
-            const cardContainer = document.querySelector('.card-container');
-    
-            leftArrow.addEventListener('click', () => {
-                cardContainer.scrollBy({
-                    left: -300, // Adjust this value according to your card width
-                    behavior: 'smooth'
-                });
-            });
-    
-            rightArrow.addEventListener('click', () => {
-                cardContainer.scrollBy({
-                    left: 300, // Adjust this value according to your card width
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-    
-
-
 </body>
 </html>
