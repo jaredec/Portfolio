@@ -348,8 +348,15 @@ section {
     }
 
     .card {
-        width: 60%; /* Make cards take the full width on very small screens */
-        max-width: 300px; /* Ensure cards don't exceed their original width */
+        max-width: 250px; /* Ensure cards don't exceed their original width */
+    }
+
+    .card-label,
+    .blurred-content,
+    .blurred-label,
+    .card-content {
+        font-size: 80%;
+
     }
 }
 
@@ -382,10 +389,6 @@ section {
     float: left;
 }
 
-.intro-info .lead {
-    text-align: left;
-}
-
 .fzkLtX {
     box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
     transition: box-shadow 0.3s ease-out 0s;
@@ -397,10 +400,6 @@ section {
     line-height: 2.25rem;
     color: rgb(0, 0, 0);
     margin-bottom: 3rem;
-}
-
-.intro-info .h1 {
-    text-align: left;
 }
 
 .intro-info .h2 {
