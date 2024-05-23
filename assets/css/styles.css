@@ -124,8 +124,6 @@ iframe {
 #languages, #software {
     padding: 50px;
     text-align: center;
-    background-image: url("../images/backuppaint.jpg");
-    background-size: cover;
     border-radius: 2px;
 
 }
@@ -434,7 +432,18 @@ section {
     letter-spacing: -.02em;
     font-weight: 400;
     text-wrap: balance;
+    margin-bottom: .79625rem;
+
 }
+
+.projects-container .header .subhead {
+    font-size: 1.4175rem;
+    letter-spacing: -.0026em;
+    line-height: 130%;
+    font-weight: 400;
+    text-wrap: balance;
+}    
+
 
 .projects-container .content {
     max-width: 800px;
@@ -499,8 +508,6 @@ section {
 }
 
 .about-background {
-    background-image: url("../images/backuppaint.jpg");
-    background-size: cover;
     border-radius: 2px;
 }
 
