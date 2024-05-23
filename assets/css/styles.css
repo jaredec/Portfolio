@@ -124,7 +124,10 @@ iframe {
 #languages, #software {
     padding: 50px;
     text-align: center;
-    background-color: #fff;
+    background-image: url("../images/backuppaint.jpg");
+    background-size: cover;
+    border-radius: 2px;
+
 }
 
 #languages h2, #software h2 {
@@ -485,6 +488,12 @@ section {
     margin-left: 50px;
 }
 
+.about-background {
+    background-image: url("../images/backuppaint.jpg");
+    background-size: cover;
+    border-radius: 2px;
+}
+
 .about-wrapper {
     display: flex;
     align-items: center;
@@ -496,7 +505,7 @@ section {
     border-radius: 50%;
     align-items: center;
     margin: 20px;
-  }
+}
 
 
 /* MOBILE CSS */
