@@ -479,16 +479,25 @@ section {
 
 /* About */
 .about-me {
-    padding: 50px;
+    margin: 20px;
     line-height: 1.6;
-    background-color: #fff;
+    flex: 1;
+    margin-left: 50px;
 }
 
-.about-me h1{
-    text-align: center;
-    line-height: 1.6;
-    margin-bottom: 40px;
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.about-photo {
+    width: 150px;
+    border-radius: 50%;
+    align-items: center;
+    margin: 20px;
+  }
+
 
 /* MOBILE CSS */
 @media only screen and (max-width: 767px) {
