@@ -406,7 +406,7 @@ section {
     margin: 0;
     padding: 0;
     color: #333;
-    padding-top: 70px;
+    padding-top: 110px;
 }
 
 .projects-container .container {
@@ -420,10 +420,20 @@ section {
 }
 
 .projects-container .header p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
+    font-size: 0.94635rem;
+    line-height: 150%;
+    letter-spacing: .0016em;
+    font-weight: 400;
+    margin-bottom: .79625rem;
     text-align: center;
+}
+
+.projects-container .header h1{
+    font-size: 3.37125rem;
+    line-height: 110%;
+    letter-spacing: -.02em;
+    font-weight: 400;
+    text-wrap: balance;
 }
 
 .projects-container .content {
