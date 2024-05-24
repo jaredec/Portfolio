@@ -11,8 +11,8 @@ a {
 }
 
 footer {
-    padding: 125px;
     justify-content: center;
+    text-align: center;
 }
 
 .section-title {
@@ -569,7 +569,7 @@ section {
 }
 
 .contact-margin-bottom {
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
   
 .section-title {
