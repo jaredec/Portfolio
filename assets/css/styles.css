@@ -564,43 +564,31 @@ section {
 
 /* Contact Section */
 .contact-container {
+    align-items: center;
     text-align: center; /* Aligns text to the left within the container */
-  }
+}
+
+.contact-margin-bottom {
+    margin-bottom: 30px;
+}
   
-  .section-title {
+.section-title {
     text-align: left; /* Ensures the title is left-aligned */
     margin-bottom: 20px;
     color: #333;
-  }
+}
   
-  .contact-content {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-  }
-  
-  .contact-photo {
-    width: 150px;
-    border-radius: 50%;
-    margin-right: 20px; /* Adjusted margin */
-  }
-  
-  .contact-info {
-    color: #333;
-    text-align: left; /* Keeps text aligned to the left */
-  }
   
   .contact-email {
     box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
     transition: box-shadow 0.3s ease-out 0s;
   }
-  
-  .contact-links {
-    margin-top: 20px;
-    text-align: left;
+
+  .contact-email:hover{
+    text-decoration: none;
+    color:#000;
   }
-  
+    
   .intro-link {
     display: inline-block;
     margin: 0 10px;
