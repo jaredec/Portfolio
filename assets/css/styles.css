@@ -411,8 +411,22 @@ section {
 }
 
 .projects-container .container {
-    padding: 45px;
-    max-width: 800px;
+    padding: 38px;
+}
+
+.projects-paint {
+    padding: 0px;
+}
+
+.projects-paint {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.projects-paint img {
+    width: 100%; /* This ensures the image spans the full width of the container */
+    height: 600px; /* This maintains the aspect ratio of the image */
+    border-radius: 8px;
 }
 
 .projects-container .header {
