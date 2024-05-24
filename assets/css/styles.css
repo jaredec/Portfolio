@@ -20,7 +20,10 @@ footer {
     line-height: 130%;
     font-weight: 400;
     letter-spacing: -.0026em;
+    text-align: left; /* Ensures the title is left-aligned */
+    margin-bottom: 20px;
 }
+
 
 pre {
     background: #f4f4f4;
@@ -565,17 +568,11 @@ section {
 /* Contact Section */
 .contact-container {
     align-items: center;
-    text-align: center; /* Aligns text to the left within the container */
+    text-align: left; /* Aligns text to the left within the container */
 }
 
 .contact-margin-bottom {
     margin-bottom: 100px;
-}
-  
-.section-title {
-    text-align: left; /* Ensures the title is left-aligned */
-    margin-bottom: 20px;
-    color: #333;
 }
   
   
