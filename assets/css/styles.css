@@ -382,7 +382,22 @@ section {
 }
 
 .landing-info {
-    padding-top: 70px;
+    padding-top: 150px;
+    padding-bottom: 70px;
+}
+
+.landing-info .h1{
+    font-size: 5rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0;
+}
+
+.landing-info .h2{
+    font-size: 3.5rem;
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: 0;
 }
 
 .landing-info .h2 {
