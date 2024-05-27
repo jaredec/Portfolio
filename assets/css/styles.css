@@ -22,7 +22,7 @@ footer {
     letter-spacing: -.0026em;
     text-align: left; /* Ensures the title is left-aligned */
     margin-bottom: 20px;
-    padding-top: 40px;
+    padding-top: 70px;
 }
 
 
@@ -593,7 +593,6 @@ section {
 .contact-container {
     align-items: center;
     text-align: center; /* Aligns text to the left within the container */
-    background-color: white;
     padding: 50px;
 
 }
@@ -609,7 +608,6 @@ section {
   
   
   .contact-email {
-    box-shadow: rgb(255, 159, 28) 0px -0.5rem 0px inset;
     transition: box-shadow 0.3s ease-out 0s;
   }
 
