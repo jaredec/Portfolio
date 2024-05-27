@@ -634,3 +634,12 @@ section {
     height: 100px; /* Adjust the height as needed */
     overflow: hidden;
 }
+
+#projects-link {
+    color: blue;
+}
+
+#projects-link:hover {
+    text-decoration: underline;
+}
+

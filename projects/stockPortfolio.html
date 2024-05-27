@@ -106,7 +106,7 @@
               
               <p>Drift (\( \mu \)) serves as an indicator of the average rate of return of the stock over time, influencing the long-term trend of simulated trajectories. Volatility (\( \sigma \)), on the other hand, measures the degree of price fluctuation around this average return, directly impacting the magnitude of short-term fluctuations in trajectories. The Wiener process (\( W_t \)) introduces randomness or unpredictability into the trajectories, representing the stochastic nature of stock price movements.</p>
   
-              <p>In <a href="https://github.com/jaredec/jaredec.github.io/blob/main/assets/resources/stockPriceForecast.py" target="_blank">Python</a>, we set up these parameters using the latest stock data, and by applying the GBM formula, we can generate multiple simulated trajectories of future stock prices. This technique, known as Monte Carlo Simulation, enables us to simulate various potential outcomes for a stock.</p>
+              <p>In <a href="https://github.com/jaredec/jaredec.github.io/blob/main/assets/resources/stockPriceForecast.py" target="_blank" id="projects-link">Python</a>, we set up these parameters using the latest stock data, and by applying the GBM formula, we can generate multiple simulated trajectories of future stock prices. This technique, known as Monte Carlo Simulation, enables us to simulate various potential outcomes for a stock.</p>
   
               <div class="projects-img">
                   <img src="../assets/images/stockPortfolio/gbm_mc_sims.png" alt="GBM Monte Carlo Simulations">
@@ -121,7 +121,7 @@
               <h3>Application in Portfolio Management</h3>
               <p>In this section, we extend the application of Monte Carlo Simulation to manage a portfolio of stocks and evaluate the associated risks. Unlike the previous Monte Carlo Simulation for individual stock price forecasting, here, we focus on simulating the performance of an entire portfolio.</p>
   
-              <p>The key difference here is that we are now simulating a system with multiple correlated stocks. In our new <a href="https://github.com/jaredec/jaredec.github.io/blob/main/assets/resources/MC.py" target="_blank">Python code</a>, we generate a covariance matrix based on returns and utilize a technique known as Cholesky Decomposition. This matrix will help us understand how individual stock returns relate to each other within a portfolio.</p>
+              <p>The key difference here is that we are now simulating a system with multiple correlated stocks. In our new <a href="https://github.com/jaredec/jaredec.github.io/blob/main/assets/resources/MC.py" target="_blank" id="projects-link">Python code</a>, we generate a covariance matrix based on returns and utilize a technique known as Cholesky Decomposition. This matrix will help us understand how individual stock returns relate to each other within a portfolio.</p>
   
               <p>By applying the Cholesky Decomposition method, we simplify the covariance matrix, making it easier to work with. This simplification enables us to simulate returns by multiplying it with a random vector of independent standard normally distributed variables.</p>
   
